@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kenangan Bersama Kakak Cantik🤍</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        header {
+            background: pink;
+            color: white;
+            padding: 30px;
+        }
+
+        .kata {
+            background: white;
+            margin: 20px auto;
+            width: 85%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .galeri {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .galeri img {
+            width: 200px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .galeri img:hover {
+            transform: scale(1.05);
+        }
+
+        /* popup */
+        .popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup img {
+            max-width: 80%;
+            border-radius: 10px;
+        }
+
+        .popup span {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-musik {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            background: pink;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kenangan Bersama Kakak Kelas 🤍</h1>
+    <p>Momen indah yang tak terlupakan</p>
+</header>
+
+<div class="kata">
+    <p>
+        Terima kasih kakak tercantik 🌸  
+        Atas semua tawa, cerita, dan kebersamaan.  
+        Semoga kakak selalu diberi kesehatan,  
+        kebahagiaan, dan kesuksesan oleh Allah SWT 🤍
+    </p>
+</div>
+
+<div class="galeri">
+    <!-- GANTI FOTO -->
+    <img src="foto1.jpg" onclick="lihat(this)">
+    <img src="foto2.jpg" onclick="lihat(this)">
+    <img src="foto3.jpg" onclick="lihat(this)"> 
+    <img src="foto4.jpg" onclick="lihat(this)"> 
+    <img src="foto5.jpg" onclick="lihat(this)"> 
+    <img src="foto6.jpg" onclick="lihat(this)"> 
+    <img src="foto7.jpg" onclick="lihat(this)"> 
+    <img src="foto8.jpg" onclick="lihat(this)"> 
+    <img src="foto9.jpg" onclick="lihat(this)"> 
+    <img src="foto10.jpg" onclick="lihat(this)"> 
+    <img src="foto11.jpg" onclick="lihat(this)"> 
+    <img src="foto12.jpg" onclick="lihat(this)"> 
+    <img src="foto13.jpg" onclick="lihat(this)"> 
+    <img src="foto14.jpg" onclick="lihat(this)"> 
+    <img src="foto15.jpg" onclick="lihat(this)"> 
+    <img src="foto16.jpg" onclick="lihat(this)"> 
+    <img src="foto17.jpg" onclick="lihat(this)"> 
+    <img src="foto18.jpg" onclick="lihat(this)"> 
+    <img src="foto19.jpg" onclick="lihat(this)"> 
+    <img src="foto20.jpg" onclick="lihat(this)"> 
+    <img src="foto21.jpg" onclick="lihat(this)"> 
+    <img src="foto22.jpg" onclick="lihat(this)"> 
+    <img src="foto23.jpg" onclick="lihat(this)"> 
+    <img src="foto24.jpg" onclick="lihat(this)"> 
+    <img src="foto25.jpg" onclick="lihat(this)"> 
+
+</div>
+
+<!-- popup -->
+<div class="popup" id="popup">
+    <span onclick="tutup()">✖</span>
+    <img id="gambarPopup">
+</div>
+
+<!-- musik AUTOPLAY -->
+<audio id="musik" autoplay loop muted>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<button class="btn-musik" onclick="toggleMusik()">🎵 Musik</button>
+
+<script>
+    // popup foto
+    function lihat(img) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("gambarPopup").src = img.src;
+    }
+
+    function tutup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // musik langsung bunyi
+    window.onload = function () {
+        const musik = document.getElementById("musik");
+        musik.muted = false;
+        musik.play().catch(() => {});
+    };
+
+    function toggleMusik() {
+        const musik = document.getElementById("musik");
+        if (musik.paused) {
+            musik.play();
+        } else {
+            musik.pause();
+        }
+    }
+</script>
+
+</body>
+</html>
